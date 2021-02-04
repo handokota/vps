@@ -89,6 +89,7 @@ chmod +x /usr/bin/user-list.sh
 
 # install badvpn
 apt-get -y install cmake
+cd vps/
 tar xf badvpn-1.999.130.tar.gz
 mkdir badvpn-build
 cd badvpn-build
@@ -172,6 +173,7 @@ chmod +x vps/app/Cloak-Installer.sh
 cd vps/app
 ./Cloak-Installer.sh
 cd
+cd vps
 wget https://github.com/cbeuw/Cloak/releases/download/v2.2.1/ck-server-linux-amd64-2.2.1
 mv vps/ck-server-linux-amd64-2.2.1 /usr/bin/ck-server
 chmod +x /usr/bin/ck-server
@@ -192,6 +194,7 @@ make install
 
 # install v2ray-plugin
 cd
+cd vps
 wget https://github.com/shadowsocks/v2ray-plugin/releases/download/v1.3.1/v2ray-plugin-linux-amd64-v1.3.1.tar.gz
 tar -zxvf v2ray-plugin-linux-amd64-v1.3.1.tar.gz
 mv vps/v2ray-plugin_linux_amd64 /usr/bin/v2ray-plugin
@@ -229,19 +232,20 @@ cd vps/app
 ./wireguard-install.sh
 
 # install trojan
-cd
-apt-get -y install trojan
-sed -i 's/443/447/g' /etc/trojan/config.json
-sed -i 's/80/81/g' /etc/trojan/config.json
-sed -i 's@/path/to/certificate.crt@/etc/letsencrypt/live/sg01.hostervpn.com/fullchain.pem@g' /etc/trojan/config.json
-sed -i 's@/path/to/private.key@/etc/letsencrypt/live/sg01.hostervpn.com/privkey.pem@g' /etc/trojan/config.json
-sed -i 's@"password1",@"admin"@g' /etc/trojan/config.json
-sed -i '/"password2"/d' /etc/trojan/config.json
-sed -i 's@"fast_open": false,@"fast_open": true,@g' /etc/trojan/config.json
-systemctl enable trojan.service
-service trojan restart
+#cd
+#apt-get -y install trojan
+#sed -i 's/443/447/g' /etc/trojan/config.json
+#sed -i 's/80/81/g' /etc/trojan/config.json
+#sed -i 's@/path/to/certificate.crt@/etc/letsencrypt/live/sg01.hostervpn.com/fullchain.pem@g' /etc/trojan/config.json
+#sed -i 's@/path/to/private.key@/etc/letsencrypt/live/sg01.hostervpn.com/privkey.pem@g' /etc/trojan/config.json
+#sed -i 's@"password1",@"admin"@g' /etc/trojan/config.json
+#sed -i '/"password2"/d' /etc/trojan/config.json
+#sed -i 's@"fast_open": false,@"fast_open": true,@g' /etc/trojan/config.json
+#systemctl enable trojan.service
+#service trojan restart
 
 # install pptp
+cd
 apt-get -y install pptpd
 echo "localip 10.6.0.1" >> /etc/pptpd.conf
 echo "remoteip 10.6.0.2-253" >> /etc/pptpd.conf
@@ -250,3 +254,4 @@ echo "ms-dns 1.0.0.1" >> /etc/ppp/pptpd-options
 echo "admin pptpd admin *" >> /etc/ppp/chap-secrets
 systemctl enable pptpd.service
 service pptpd restart
+cd
