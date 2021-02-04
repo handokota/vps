@@ -1,0 +1,15 @@
+[Unit]
+Description=Cloak Server Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+LimitNOFILE=32768
+ExecStart=/usr/bin/ck-server -c ckserver.json
+WorkingDirectory=/etc/cloak
+
+[Install]
+WantedBy=multi-user.target

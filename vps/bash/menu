@@ -1,0 +1,35 @@
+#!/bin/bash
+clear
+echo "1) CREATE USER"
+echo "2) USER LIST"
+echo "3) USER EXTEND"
+echo "4) USER DELETE"
+echo "5) USER LOGIN"
+echo "6) BANDWIDTH"
+echo "7) SPEEDTEST"
+echo
+read -p "SELECT FROM OPTIONS: " n
+echo
+case $n in
+1)
+create.sh
+;;
+2)
+user-list.sh
+;;
+3)
+user-extend.sh
+;;
+4)
+user-delete.sh
+;;
+5)
+user-login.sh
+;;
+6)
+vnstat
+;;
+7)
+speedtest
+;;
+esac
