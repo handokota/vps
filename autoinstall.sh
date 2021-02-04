@@ -187,6 +187,7 @@ service cloak-server restart
 
 # install simple-obfs
 apt-get -y install --no-install-recommends build-essential autoconf libtool libssl-dev libpcre3-dev libev-dev asciidoc xmlto automake
+apt-get -y upgrade
 git clone https://github.com/shadowsocks/simple-obfs.git
 cd simple-obfs/
 git submodule update --init --recursive
