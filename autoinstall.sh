@@ -254,4 +254,3 @@ echo "ms-dns 1.0.0.1" >> /etc/ppp/pptpd-options
 echo "admin pptpd admin *" >> /etc/ppp/chap-secrets
 systemctl enable pptpd.service
 service pptpd restart
-cd
