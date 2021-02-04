@@ -174,8 +174,8 @@ cd vps/app
 ./Cloak-Installer.sh
 cd
 cd vps
-wget https://github.com/cbeuw/Cloak/releases/download/v2.2.1/ck-server-linux-amd64-2.2.1
-mv vps/ck-server-linux-amd64-2.2.1 /usr/bin/ck-server
+wget https://github.com/cbeuw/Cloak/releases/download/v2.5.2/ck-server-linux-amd64-v2.5.2
+mv vps/ck-server-linux-amd64-2.5.2 /usr/bin/ck-server
 chmod +x /usr/bin/ck-server
 mv vps/services/cloak.service /etc/systemd/system/cloak.service
 systemctl enable cloak.service
