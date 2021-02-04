@@ -92,7 +92,7 @@ apt-get -y install cmake
 cd vps/
 tar xf badvpn-1.999.130.tar.gz
 mkdir badvpn-build
-cd badvpn-build
+cd badvpn-build/
 cmake vps/badvpn-1.999.130 -DBUILD_NOTHING_BY_DEFAULT=1 -DBUILD_UDPGW=1
 make install
 
@@ -173,7 +173,7 @@ chmod +x vps/app/Cloak-Installer.sh
 cd vps/app
 ./Cloak-Installer.sh
 cd
-cd vps
+cd vps/
 wget https://github.com/cbeuw/Cloak/releases/download/v2.5.2/ck-server-linux-amd64-v2.5.2
 mv vps/ck-server-linux-amd64-2.5.2 /usr/bin/ck-server
 chmod +x /usr/bin/ck-server
@@ -186,7 +186,7 @@ service cloak-server restart
 apt-get -y install git
 apt-get -y install --no-install-recommends build-essential autoconf libtool libssl-dev libpcre3-dev libev-dev asciidoc xmlto automake
 git clone https://github.com/shadowsocks/simple-obfs.git
-cd simple-obfs
+cd simple-obfs/
 git submodule update --init --recursive
 ./autogen.sh
 ./configure && make
@@ -194,7 +194,7 @@ make install
 
 # install v2ray-plugin
 cd
-cd vps
+cd vps/
 wget https://github.com/shadowsocks/v2ray-plugin/releases/download/v1.3.1/v2ray-plugin-linux-amd64-v1.3.1.tar.gz
 tar -zxvf v2ray-plugin-linux-amd64-v1.3.1.tar.gz
 mv vps/v2ray-plugin_linux_amd64 /usr/bin/v2ray-plugin
