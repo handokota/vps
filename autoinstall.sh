@@ -9,6 +9,9 @@ apt-get update; apt-get -y upgrade
 # install wget and curl
 apt-get -y install wget curl
 
+# install git
+apt-get -y install git
+
 # install essential package
 apt-get -y install gnupg
 
@@ -183,7 +186,6 @@ service cloak restart
 service cloak-server restart
 
 # install simple-obfs
-apt-get -y install git
 apt-get -y install --no-install-recommends build-essential autoconf libtool libssl-dev libpcre3-dev libev-dev asciidoc xmlto automake
 git clone https://github.com/shadowsocks/simple-obfs.git
 cd simple-obfs/
