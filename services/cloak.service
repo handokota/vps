@@ -1,0 +1,14 @@
+[Unit]
+Description=Shadowsocks-libev Cloak Server Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+LimitNOFILE=32768
+ExecStart=/usr/bin/ss-server -c cloak.json
+WorkingDirectory=/etc/shadowsocks-libev
+
+[Install]
+WantedBy=multi-user.target
+
