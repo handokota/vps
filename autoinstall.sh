@@ -83,7 +83,7 @@ mv vps/bash/del-exp.sh /usr/bin/del-exp.sh
 chmod +x /usr/bin/del-exp.sh
 mv vps/bash/user-delete.sh /usr/bin/user-delete.sh
 chmod +x /usr/bin/user-delete.sh
-mv vps/bash/menu /usr/bin/user-extend.sh
+mv vps/bash/user-extend /usr/bin/user-extend.sh
 chmod +x /usr/bin/user-extend.sh
 mv vps/bash/user-login.sh /usr/bin/user-login.sh
 chmod +x /usr/bin/user-login.sh
