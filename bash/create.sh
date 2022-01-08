@@ -9,6 +9,7 @@ exit 0
 else
 read -p "Password: " Pass
 read -p "Active days: " Days
+MyIP=$(wget -qO- ipv4.icanhazip.com)
 Today=`date +%s`
 Days_Detailed=$(( $Days * 86400 ))
 Expire_On=$(($Today + $Days_Detailed))
@@ -21,7 +22,7 @@ egrep "^$User" /etc/passwd >/dev/null
 echo -e "$Pass\n$Pass\n"|passwd $User &> /dev/null
 echo "$User - $Pass - $Expiration_Display" >> /root/user.txt
 echo
-echo -e "Host Address: sg01.hostervpn.com"
+echo -e "Host Address: $MyIP"
 echo -e "Username: $User"
 echo -e "Password: $Pass"
 echo -e "OpenSSH Port: 22"
@@ -35,7 +36,7 @@ echo -e "OpenVPN TCP Port: 443"
 echo -e "OpenVPN UDP Port: 1194"
 echo -e "OpenVPN+SSL Port: 943"
 echo -e "OpenVPN Cloak Port: 4435"
-echo -e "OpenVPN Client: http://sg01.hostervpn.com:81/ovpn"
+echo -e "OpenVPN Client: http://$MyIP:81/ovpn"
 echo -e "Expired: $Expiration_Display"
 echo
 fi
