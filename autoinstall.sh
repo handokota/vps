@@ -128,7 +128,7 @@ mv vps/stunnel.pem /etc/stunnel/stunnel.pem
 service stunnel4 restart
 
 # install squid
-apt-get -y install squid3
+apt-get -y install squid
 mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
 mv vps/squid.conf /etc/squid/squid.conf
 service squid restart
